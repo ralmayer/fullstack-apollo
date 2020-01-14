@@ -54,7 +54,7 @@ after these.
   type: String
 }
 
-type User {
+  type User {
   id: ID!
   email: String!
   trips: [Launch]!
