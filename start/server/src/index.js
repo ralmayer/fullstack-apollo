@@ -17,7 +17,6 @@ const server = new ApolloServer({
     userAPI: new UserAPI({ store })
   }),
   context: async ({ req }) => {
-    // simple auth check on every request
     const auth = req.headers && req.headers.authorization || '';
     const email = Buffer.from(auth, 'base64').toString('ascii');
     if (!isEmail.validate(email)) return { user: null };
